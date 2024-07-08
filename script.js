@@ -1,6 +1,5 @@
 document.getElementById('logisticForm').addEventListener('submit', function(event) {
     event.preventDefault();
-
     const conductor = document.getElementById('conductor').value;
     const fecha = document.getElementById('fecha').value;
     const hora = document.getElementById('hora').value;
@@ -22,22 +21,15 @@ document.getElementById('logisticForm').addEventListener('submit', function(even
                     position: location,
                     map: map
                 });
-
-                const reporte = `
-                Nombre del conductor: ${conductor}
-                Fecha de registro: ${fecha}
-                Hora de registro: ${hora}
-                Lugar de origen: ${origen}
-                Lugar de destino: ${destino}
-                VIN a transportar: ${vin}
-                Ubicación: ${data.results[0].formatted_address}
-                `;
-
-                console.log(reporte);
-                alert('Datos registrados con éxito');
             } else {
                 alert('Ubicación no encontrada');
             }
         })
         .catch(error => console.error('Error:', error));
+
+    console.log(`Conductor: ${conductor}, Fecha: ${fecha}, Hora: ${hora}, Origen: ${origen}, Destino: ${destino}, VIN: ${vin}, Ubicación: ${ubicacion}`);
 });
+
+function initMap() {
+    // This function is required by the Google Maps API but is not used here
+}
