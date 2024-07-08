@@ -9,7 +9,7 @@ document.getElementById('logisticForm').addEventListener('submit', function(even
     const vin = document.getElementById('vin').value;
     const ubicacion = document.getElementById('ubicacion').value;
 
-    fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${ubicacion}&key=TU_API_KEY`)
+    fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${ubicacion}&key=AIzaSyCEyW26jg40kObtm79ejulre3hmWM3es0w`)
         .then(response => response.json())
         .then(data => {
             if (data.results.length > 0) {
